@@ -1,0 +1,17 @@
+[2024-03-25T19:09:05.424+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:57:23.881111+00:00 [queued]>
+[2024-03-25T19:09:05.449+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:57:23.881111+00:00 [queued]>
+[2024-03-25T19:09:05.450+0000] {taskinstance.py:2193} INFO - Starting attempt 2 of 2
+[2024-03-25T19:09:05.489+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-25 18:57:23.881111+00:00
+[2024-03-25T19:09:05.500+0000] {standard_task_runner.py:60} INFO - Started process 4464 to run task
+[2024-03-25T19:09:05.511+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_up_gcs', 'get_data_api', 'manual__2024-03-25T18:57:23.881111+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/test_get_up_gcs.py', '--cfg-path', '/tmp/tmpyy7hobh0']
+[2024-03-25T19:09:05.517+0000] {standard_task_runner.py:88} INFO - Job 44: Subtask get_data_api
+[2024-03-25T19:09:05.658+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:57:23.881111+00:00 [running]> on host c5a6ac367c49
+[2024-03-25T19:09:05.905+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_up_gcs' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-25T18:57:23.881111+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-25T18:57:23.881111+00:00'
+[2024-03-25T19:09:16.046+0000] {test_get_up_gcs.py:61} INFO - JSON data saved to /opt/***/dags/data_get.json
+[2024-03-25T19:09:16.047+0000] {test_get_up_gcs.py:65} INFO - local file path : /opt/***/dags/data_get.json
+[2024-03-25T19:09:16.047+0000] {test_get_up_gcs.py:69} INFO - bucket name : ds525-capstone-test-49
+[2024-03-25T19:09:16.048+0000] {test_get_up_gcs.py:71} INFO - dst : gs://ds525-capstone-test-49/data_get.json
+[2024-03-25T19:09:16.053+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-25T19:09:16.078+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_up_gcs, task_id=get_data_api, execution_date=20240325T185723, start_date=20240325T190905, end_date=20240325T190916
+[2024-03-25T19:09:16.135+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T19:09:16.190+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

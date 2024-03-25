@@ -1,0 +1,47 @@
+[2024-03-25T17:39:25.478+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [queued]>
+[2024-03-25T17:39:25.516+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [queued]>
+[2024-03-25T17:39:25.517+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-25T17:39:25.576+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-25 13:15:00+00:00
+[2024-03-25T17:39:25.591+0000] {standard_task_runner.py:60} INFO - Started process 1523 to run task
+[2024-03-25T17:39:25.617+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_up_gcs', 'get_data_api', 'scheduled__2024-03-25T13:15:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/test_get_up_gcs.py', '--cfg-path', '/tmp/tmp6nz8dwej']
+[2024-03-25T17:39:25.625+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask get_data_api
+[2024-03-25T17:39:25.812+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-03-25T17:39:26.172+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_up_gcs' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-25T13:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-25T13:15:00+00:00'
+[2024-03-25T17:39:34.618+0000] {test_get_up_gcs.py:50} INFO - JSON data saved to /opt/***/dags/data_get.json
+[2024-03-25T17:39:34.627+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-25T17:39:34.657+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_up_gcs, task_id=get_data_api, execution_date=20240325T131500, start_date=20240325T173925, end_date=20240325T173934
+[2024-03-25T17:39:34.715+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T17:39:34.764+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-03-25T19:38:00.261+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [queued]>
+[2024-03-25T19:38:00.308+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [queued]>
+[2024-03-25T19:38:00.309+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-25T19:38:00.379+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-25 13:15:00+00:00
+[2024-03-25T19:38:00.392+0000] {standard_task_runner.py:60} INFO - Started process 5446 to run task
+[2024-03-25T19:38:00.418+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_up_gcs', 'get_data_api', 'scheduled__2024-03-25T13:15:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/test_get_up_gcs.py', '--cfg-path', '/tmp/tmpob8w0f99']
+[2024-03-25T19:38:00.427+0000] {standard_task_runner.py:88} INFO - Job 64: Subtask get_data_api
+[2024-03-25T19:38:00.653+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-03-25T13:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-03-25T19:38:00.922+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_up_gcs' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-25T13:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-25T13:15:00+00:00'
+[2024-03-25T19:38:16.550+0000] {test_get_up_gcs.py:60} INFO - JSON data saved to /opt/***/dags/data_2024_03_26_0200.json
+[2024-03-25T19:38:16.552+0000] {test_get_up_gcs.py:64} INFO - local file path : /opt/***/dags/data_2024_03_26_0200.json
+[2024-03-25T19:38:16.553+0000] {test_get_up_gcs.py:68} INFO - bucket name : ds525-capstone-test-49
+[2024-03-25T19:38:16.554+0000] {test_get_up_gcs.py:71} INFO - dst : data/data_2024_03_26_0200.json
+[2024-03-25T19:38:16.588+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-25T19:38:16.601+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-03-25T19:38:17.602+0000] {gcs.py:557} INFO - File /opt/***/dags/data_2024_03_26_0200.json uploaded to data/data_2024_03_26_0200.json in ds525-capstone-test-49 bucket
+[2024-03-25T19:38:17.605+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_get_up_gcs.py", line 85, in _get_data_api
+    os.remove(local_file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/data_2024_03_26_0200.json'
+[2024-03-25T19:38:17.629+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=test_get_up_gcs, task_id=get_data_api, execution_date=20240325T131500, start_date=20240325T193800, end_date=20240325T193817
+[2024-03-25T19:38:17.678+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 64 for task get_data_api ([Errno 2] No such file or directory: '/opt/airflow/dags/data_2024_03_26_0200.json'; 5446)
+[2024-03-25T19:38:17.727+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-25T19:38:17.794+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

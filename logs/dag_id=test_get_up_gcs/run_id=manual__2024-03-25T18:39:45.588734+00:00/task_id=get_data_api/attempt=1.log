@@ -1,0 +1,17 @@
+[2024-03-25T18:39:47.547+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:39:45.588734+00:00 [queued]>
+[2024-03-25T18:39:47.580+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:39:45.588734+00:00 [queued]>
+[2024-03-25T18:39:47.582+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-25T18:39:47.628+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-25 18:39:45.588734+00:00
+[2024-03-25T18:39:47.640+0000] {standard_task_runner.py:60} INFO - Started process 3481 to run task
+[2024-03-25T18:39:47.651+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_up_gcs', 'get_data_api', 'manual__2024-03-25T18:39:45.588734+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/test_get_up_gcs.py', '--cfg-path', '/tmp/tmpggcvrzxt']
+[2024-03-25T18:39:47.658+0000] {standard_task_runner.py:88} INFO - Job 25: Subtask get_data_api
+[2024-03-25T18:39:47.796+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_up_gcs.get_data_api manual__2024-03-25T18:39:45.588734+00:00 [running]> on host c5a6ac367c49
+[2024-03-25T18:39:48.242+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_up_gcs' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-25T18:39:45.588734+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-25T18:39:45.588734+00:00'
+[2024-03-25T18:40:02.330+0000] {test_get_up_gcs.py:60} INFO - JSON data saved to /opt/***/dags/data_2024_03_26_0100.json
+[2024-03-25T18:40:02.333+0000] {test_get_up_gcs.py:64} INFO - local file path : /opt/***/dags/data_2024_03_26_0100.json
+[2024-03-25T18:40:02.335+0000] {test_get_up_gcs.py:68} INFO - bucket name : /opt/***/dags/data_2024_03_26_0100.json
+[2024-03-25T18:40:02.337+0000] {test_get_up_gcs.py:70} INFO - dst : /opt/***/dags/data_2024_03_26_0100.json
+[2024-03-25T18:40:02.346+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-25T18:40:02.375+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_up_gcs, task_id=get_data_api, execution_date=20240325T183945, start_date=20240325T183947, end_date=20240325T184002
+[2024-03-25T18:40:02.536+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-25T18:40:02.625+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
