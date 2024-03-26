@@ -1,0 +1,16 @@
+[2024-03-26T17:00:53.542+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api manual__2024-03-26T17:00:51.057352+00:00 [queued]>
+[2024-03-26T17:00:53.573+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api manual__2024-03-26T17:00:51.057352+00:00 [queued]>
+[2024-03-26T17:00:53.574+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-26T17:00:53.618+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-26 17:00:51.057352+00:00
+[2024-03-26T17:00:53.631+0000] {standard_task_runner.py:60} INFO - Started process 46815 to run task
+[2024-03-26T17:00:53.644+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_tmd_api', 'get_data_api', 'manual__2024-03-26T17:00:51.057352+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/test_get_tmd_api.py', '--cfg-path', '/tmp/tmpe3jv1pnt']
+[2024-03-26T17:00:53.650+0000] {standard_task_runner.py:88} INFO - Job 92: Subtask get_data_api
+[2024-03-26T17:00:53.846+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_tmd_api.get_data_api manual__2024-03-26T17:00:51.057352+00:00 [running]> on host c5a6ac367c49
+[2024-03-26T17:00:54.071+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_tmd_api' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-26T17:00:51.057352+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-26T17:00:51.057352+00:00'
+[2024-03-26T17:01:08.086+0000] {test_get_tmd_api.py:49} INFO - **** filename : data_2024_03_27_0000.json
+[2024-03-26T17:01:08.100+0000] {test_get_tmd_api.py:55} INFO - JSON data saved to /opt/***/dags/data_get.json
+[2024-03-26T17:01:08.101+0000] {test_get_tmd_api.py:57} INFO - dst : data_test/data_2024_03_27_0000.json
+[2024-03-26T17:01:08.106+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-26T17:01:08.133+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_tmd_api, task_id=get_data_api, execution_date=20240326T170051, start_date=20240326T170053, end_date=20240326T170108
+[2024-03-26T17:01:08.195+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-26T17:01:08.248+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

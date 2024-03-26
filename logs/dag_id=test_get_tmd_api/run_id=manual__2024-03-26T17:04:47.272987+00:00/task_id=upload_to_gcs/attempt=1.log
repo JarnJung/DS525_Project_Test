@@ -1,0 +1,16 @@
+[2024-03-26T17:05:03.254+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_tmd_api.upload_to_gcs manual__2024-03-26T17:04:47.272987+00:00 [queued]>
+[2024-03-26T17:05:03.281+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_tmd_api.upload_to_gcs manual__2024-03-26T17:04:47.272987+00:00 [queued]>
+[2024-03-26T17:05:03.282+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-26T17:05:03.323+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): upload_to_gcs> on 2024-03-26 17:04:47.272987+00:00
+[2024-03-26T17:05:03.335+0000] {standard_task_runner.py:60} INFO - Started process 46998 to run task
+[2024-03-26T17:05:03.346+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_tmd_api', 'upload_to_gcs', 'manual__2024-03-26T17:04:47.272987+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/test_get_tmd_api.py', '--cfg-path', '/tmp/tmpm15b6j1v']
+[2024-03-26T17:05:03.352+0000] {standard_task_runner.py:88} INFO - Job 97: Subtask upload_to_gcs
+[2024-03-26T17:05:03.480+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_tmd_api.upload_to_gcs manual__2024-03-26T17:04:47.272987+00:00 [running]> on host c5a6ac367c49
+[2024-03-26T17:05:03.724+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_tmd_api' AIRFLOW_CTX_TASK_ID='upload_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2024-03-26T17:04:47.272987+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-26T17:04:47.272987+00:00'
+[2024-03-26T17:05:03.728+0000] {test_get_tmd_api.py:63} INFO - local file path : /opt/***/dags/data_get.json
+[2024-03-26T17:05:03.729+0000] {test_get_tmd_api.py:67} INFO - bucket name : ds525-capstone-test-49
+[2024-03-26T17:05:03.730+0000] {test_get_tmd_api.py:70} INFO - dst : data_get.json
+[2024-03-26T17:05:03.731+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-26T17:05:03.755+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_tmd_api, task_id=upload_to_gcs, execution_date=20240326T170447, start_date=20240326T170503, end_date=20240326T170503
+[2024-03-26T17:05:03.801+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-26T17:05:03.845+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
