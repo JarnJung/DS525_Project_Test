@@ -1,0 +1,34 @@
+[2024-03-27T18:15:11.283+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-26T04:15:00+00:00 [queued]>
+[2024-03-27T18:15:11.413+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-26T04:15:00+00:00 [queued]>
+[2024-03-27T18:15:11.414+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-27T18:15:11.567+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-26 04:15:00+00:00
+[2024-03-27T18:15:11.605+0000] {standard_task_runner.py:60} INFO - Started process 109659 to run task
+[2024-03-27T18:15:11.646+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_tmd_api', 'get_data_api', 'scheduled__2024-03-26T04:15:00+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/test_get_tmd_api.py', '--cfg-path', '/tmp/tmpql7at4d0']
+[2024-03-27T18:15:11.659+0000] {standard_task_runner.py:88} INFO - Job 110: Subtask get_data_api
+[2024-03-27T18:15:12.165+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-26T04:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-03-27T18:15:13.189+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_tmd_api' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-26T04:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-26T04:15:00+00:00'
+[2024-03-27T18:15:19.775+0000] {test_get_tmd_api.py:43} INFO - **** filename : data_2024_03_28_0100.json
+[2024-03-27T18:15:19.798+0000] {test_get_tmd_api.py:49} INFO - JSON data saved to /opt/***/dags/data_get.json
+[2024-03-27T18:15:19.799+0000] {test_get_tmd_api.py:53} INFO - local file path : /opt/***/dags/data_get.json
+[2024-03-27T18:15:19.800+0000] {test_get_tmd_api.py:57} INFO - bucket name : ds525-capstone-test-49
+[2024-03-27T18:15:19.805+0000] {test_get_tmd_api.py:60} INFO - dst : data_test/data_2024_03_28_0100.json
+[2024-03-27T18:15:19.870+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-27T18:15:19.888+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-03-27T18:15:21.431+0000] {gcs.py:557} INFO - File /opt/***/dags/data_get.json uploaded to data_test/data_2024_03_28_0100.json in ds525-capstone-test-49 bucket
+[2024-03-27T18:15:21.435+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_get_tmd_api.py", line 74, in _get_data_api
+    os.remove(local_file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/data_get.json'
+[2024-03-27T18:15:21.542+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=test_get_tmd_api, task_id=get_data_api, execution_date=20240326T041500, start_date=20240327T181511, end_date=20240327T181521
+[2024-03-27T18:15:22.214+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 110 for task get_data_api ([Errno 2] No such file or directory: '/opt/airflow/dags/data_get.json'; 109659)
+[2024-03-27T18:15:22.298+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-27T18:15:22.406+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

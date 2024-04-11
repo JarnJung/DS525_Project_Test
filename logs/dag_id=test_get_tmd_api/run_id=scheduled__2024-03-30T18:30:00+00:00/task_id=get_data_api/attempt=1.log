@@ -1,0 +1,21 @@
+[2024-03-30T21:30:01.324+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-30T18:30:00+00:00 [queued]>
+[2024-03-30T21:30:01.352+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-30T18:30:00+00:00 [queued]>
+[2024-03-30T21:30:01.353+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-30T21:30:01.396+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-03-30 18:30:00+00:00
+[2024-03-30T21:30:01.409+0000] {standard_task_runner.py:60} INFO - Started process 68129 to run task
+[2024-03-30T21:30:01.420+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_tmd_api', 'get_data_api', 'scheduled__2024-03-30T18:30:00+00:00', '--job-id', '196', '--raw', '--subdir', 'DAGS_FOLDER/test_get_tmd_api.py', '--cfg-path', '/tmp/tmp9cl4b5sn']
+[2024-03-30T21:30:01.426+0000] {standard_task_runner.py:88} INFO - Job 196: Subtask get_data_api
+[2024-03-30T21:30:01.563+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_tmd_api.get_data_api scheduled__2024-03-30T18:30:00+00:00 [running]> on host c5a6ac367c49
+[2024-03-30T21:30:01.797+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_tmd_api' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T18:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T18:30:00+00:00'
+[2024-03-30T21:30:21.228+0000] {test_get_tmd_api.py:43} INFO - **** filename : data_2024_03_31_0400.json
+[2024-03-30T21:30:21.241+0000] {test_get_tmd_api.py:49} INFO - JSON data saved to /opt/***/dags/data_get.json
+[2024-03-30T21:30:21.242+0000] {test_get_tmd_api.py:53} INFO - local file path : /opt/***/dags/data_get.json
+[2024-03-30T21:30:21.243+0000] {test_get_tmd_api.py:57} INFO - bucket name : ds525-capstone-test-49
+[2024-03-30T21:30:21.243+0000] {test_get_tmd_api.py:60} INFO - dst : data_test/data_2024_03_31_0400.json
+[2024-03-30T21:30:21.267+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-03-30T21:30:21.278+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-03-30T21:30:22.270+0000] {gcs.py:557} INFO - File /opt/***/dags/data_get.json uploaded to data_test/data_2024_03_31_0400.json in ds525-capstone-test-49 bucket
+[2024-03-30T21:30:22.276+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-30T21:30:22.302+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_tmd_api, task_id=get_data_api, execution_date=20240330T183000, start_date=20240330T213001, end_date=20240330T213022
+[2024-03-30T21:30:22.365+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-30T21:30:22.406+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

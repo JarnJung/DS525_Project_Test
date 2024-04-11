@@ -71,14 +71,14 @@ def _get_data_api():
     upload_task.execute(context=None)
 
     # Move the local file after uploading it to GCS
-    os.remove(local_file_path)
+    # os.remove(local_file_path)
 
 
 
 with DAG (
     "test_get_tmd_api",
-    start_date=timezone.datetime(2024, 3 ,26),
-    schedule=None,
+    start_date=timezone.datetime(2024, 3, 27),
+    schedule="30 0,6,9,12,15,18,21 * * *", #cron expression
     tags=["DS525 Capstone"],
 ):
 

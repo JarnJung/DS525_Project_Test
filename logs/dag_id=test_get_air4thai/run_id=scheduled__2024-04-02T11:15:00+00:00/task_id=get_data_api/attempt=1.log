@@ -1,0 +1,126 @@
+[2024-04-02T16:57:49.673+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [queued]>
+[2024-04-02T16:57:49.746+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [queued]>
+[2024-04-02T16:57:49.748+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-02T16:57:49.824+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-04-02 11:15:00+00:00
+[2024-04-02T16:57:49.839+0000] {standard_task_runner.py:60} INFO - Started process 235976 to run task
+[2024-04-02T16:57:49.858+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_air4thai', 'get_data_api', 'scheduled__2024-04-02T11:15:00+00:00', '--job-id', '251', '--raw', '--subdir', 'DAGS_FOLDER/test_get_air4thai.py', '--cfg-path', '/tmp/tmpasb96ztr']
+[2024-04-02T16:57:49.883+0000] {standard_task_runner.py:88} INFO - Job 251: Subtask get_data_api
+[2024-04-02T16:57:50.210+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-04-02T16:57:50.651+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_air4thai' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-04-02T11:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-02T11:15:00+00:00'
+[2024-04-02T16:57:50.742+0000] {test_get_air4thai.py:27} INFO - **** filename : data_air_2024_04_02_1600.json
+[2024-04-02T16:57:50.745+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_get_air4thai.py", line 31, in _get_data_api
+    json.dump(data, file)
+NameError: name 'data' is not defined
+[2024-04-02T16:57:50.820+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=test_get_air4thai, task_id=get_data_api, execution_date=20240402T111500, start_date=20240402T165749, end_date=20240402T165750
+[2024-04-02T16:57:51.006+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 251 for task get_data_api (name 'data' is not defined; 235976)
+[2024-04-02T16:57:51.067+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-02T16:57:51.262+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-02T17:23:23.211+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [queued]>
+[2024-04-02T17:23:23.310+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [queued]>
+[2024-04-02T17:23:23.311+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-02T17:23:23.441+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-04-02 11:15:00+00:00
+[2024-04-02T17:23:23.463+0000] {standard_task_runner.py:60} INFO - Started process 237357 to run task
+[2024-04-02T17:23:23.506+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_air4thai', 'get_data_api', 'scheduled__2024-04-02T11:15:00+00:00', '--job-id', '278', '--raw', '--subdir', 'DAGS_FOLDER/test_get_air4thai.py', '--cfg-path', '/tmp/tmprvfs8g03']
+[2024-04-02T17:23:23.516+0000] {standard_task_runner.py:88} INFO - Job 278: Subtask get_data_api
+[2024-04-02T17:23:23.756+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_air4thai.get_data_api scheduled__2024-04-02T11:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-04-02T17:23:24.216+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_air4thai' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-04-02T11:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-02T11:15:00+00:00'
+[2024-04-02T17:23:24.426+0000] {test_get_air4thai.py:31} INFO - **** filename : data_air_2024_04_03_0000.json
+[2024-04-02T17:23:24.508+0000] {test_get_air4thai.py:37} INFO - JSON data saved to /opt/***/dags/data_air4thai.json
+[2024-04-02T17:23:24.510+0000] {test_get_air4thai.py:41} INFO - local file path : /opt/***/dags/data_air4thai.json
+[2024-04-02T17:23:24.511+0000] {test_get_air4thai.py:45} INFO - bucket name : ds525-capstone-test-49
+[2024-04-02T17:23:24.512+0000] {test_get_air4thai.py:48} INFO - dst : data_raw_air/data_air_2024_04_03_0000.json
+[2024-04-02T17:23:24.572+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-02T17:23:24.591+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-02T17:23:25.891+0000] {gcs.py:512} ERROR - Upload attempt of object: data_raw_air/data_air_2024_04_03_0000.json from data_raw_air/data_air_2024_04_03_0000.json has failed. Attempt: 1, max 1.
+[2024-04-02T17:23:25.893+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2627, in _prep_and_do_upload
+    created_json = self._do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2433, in _do_upload
+    response = self._do_multipart_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 1946, in _do_multipart_upload
+    response = upload.transmit(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 153, in transmit
+    return _request_helpers.wait_and_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/_request_helpers.py", line 178, in wait_and_retry
+    raise error
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 149, in retriable_request
+    self._process_response(result)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_upload.py", line 125, in _process_response
+    _helpers.require_status_code(response, (http.client.OK,), self._get_status_code)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 429, 'Expected one of', 200)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_get_air4thai.py", line 59, in _get_data_api
+    upload_task.execute(context=None)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 110, in execute
+    hook.upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 551, in upload
+    _call_with_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 519, in _call_with_retry
+    raise e
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 509, in _call_with_retry
+    f()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2949, in upload_from_filename
+    self._handle_filename_and_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2819, in _handle_filename_and_upload
+    self._prep_and_do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2645, in _prep_and_do_upload
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 4811, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.TooManyRequests: 429 POST https://storage.googleapis.com/upload/storage/v1/b/ds525-capstone-test-49/o?uploadType=multipart: {
+  "error": {
+    "code": 429,
+    "message": "The object ds525-capstone-test-49/data_raw_air/data_air_2024_04_03_0000.json exceeded the rate limit for object mutation operations (create, update, and delete). Please reduce your request rate. See https://cloud.google.com/storage/docs/gcs429.",
+    "errors": [
+      {
+        "message": "The object ds525-capstone-test-49/data_raw_air/data_air_2024_04_03_0000.json exceeded the rate limit for object mutation operations (create, update, and delete). Please reduce your request rate. See https://cloud.google.com/storage/docs/gcs429.",
+        "domain": "usageLimits",
+        "reason": "rateLimitExceeded"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 429, 'Expected one of', <HTTPStatus.OK: 200>)
+[2024-04-02T17:23:25.947+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=test_get_air4thai, task_id=get_data_api, execution_date=20240402T111500, start_date=20240402T172323, end_date=20240402T172325
+[2024-04-02T17:23:26.007+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 278 for task get_data_api (429 POST https://storage.googleapis.com/upload/storage/v1/b/ds525-capstone-test-49/o?uploadType=multipart: {
+  "error": {
+    "code": 429,
+    "message": "The object ds525-capstone-test-49/data_raw_air/data_air_2024_04_03_0000.json exceeded the rate limit for object mutation operations (create, update, and delete). Please reduce your request rate. See https://cloud.google.com/storage/docs/gcs429.",
+    "errors": [
+      {
+        "message": "The object ds525-capstone-test-49/data_raw_air/data_air_2024_04_03_0000.json exceeded the rate limit for object mutation operations (create, update, and delete). Please reduce your request rate. See https://cloud.google.com/storage/docs/gcs429.",
+        "domain": "usageLimits",
+        "reason": "rateLimitExceeded"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 429, 'Expected one of', <HTTPStatus.OK: 200>); 237357)
+[2024-04-02T17:23:26.052+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-02T17:23:26.112+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
