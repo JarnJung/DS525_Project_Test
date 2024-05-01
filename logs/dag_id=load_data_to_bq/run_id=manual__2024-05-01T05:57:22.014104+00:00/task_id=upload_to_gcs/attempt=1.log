@@ -1,0 +1,16 @@
+[2024-05-01T05:57:29.115+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.upload_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [queued]>
+[2024-05-01T05:57:29.158+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.upload_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [queued]>
+[2024-05-01T05:57:29.160+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T05:57:29.204+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): upload_to_gcs> on 2024-05-01 05:57:22.014104+00:00
+[2024-05-01T05:57:29.221+0000] {standard_task_runner.py:60} INFO - Started process 41463 to run task
+[2024-05-01T05:57:29.236+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'upload_to_gcs', 'manual__2024-05-01T05:57:22.014104+00:00', '--job-id', '1517', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmp0h0nxifq']
+[2024-05-01T05:57:29.244+0000] {standard_task_runner.py:88} INFO - Job 1517: Subtask upload_to_gcs
+[2024-05-01T05:57:29.382+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.upload_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [running]> on host 283945e4dc51
+[2024-05-01T05:57:29.686+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='upload_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T05:57:22.014104+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T05:57:22.014104+00:00'
+[2024-05-01T05:57:29.714+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-05-01T05:57:29.727+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-05-01T05:57:30.737+0000] {gcs.py:557} INFO - File /opt/***/dags/data_air4thai.json uploaded to stay/data_air_2024_05_01_1200.json in ds525-capstone-test-49 bucket
+[2024-05-01T05:57:30.739+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-05-01T05:57:30.764+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=load_data_to_bq, task_id=upload_to_gcs, execution_date=20240501T055722, start_date=20240501T055729, end_date=20240501T055730
+[2024-05-01T05:57:30.818+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-01T05:57:30.894+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,38 @@
+[2024-05-01T10:27:43.630+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T10:27:23.208868+00:00 [queued]>
+[2024-05-01T10:27:43.657+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T10:27:23.208868+00:00 [queued]>
+[2024-05-01T10:27:43.658+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T10:27:43.699+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): load_data_to_bq> on 2024-05-01 10:27:23.208868+00:00
+[2024-05-01T10:27:43.715+0000] {standard_task_runner.py:60} INFO - Started process 58190 to run task
+[2024-05-01T10:27:43.726+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'load_data_to_bq', 'manual__2024-05-01T10:27:23.208868+00:00', '--job-id', '1618', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmpzciig08a']
+[2024-05-01T10:27:43.733+0000] {standard_task_runner.py:88} INFO - Job 1618: Subtask load_data_to_bq
+[2024-05-01T10:27:43.880+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T10:27:23.208868+00:00 [running]> on host 283945e4dc51
+[2024-05-01T10:27:44.219+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='load_data_to_bq' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T10:27:23.208868+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T10:27:23.208868+00:00'
+[2024-05-01T10:27:44.223+0000] {get_and_load.py:137} INFO - *** gcs bucket : ds525-capstone-test-49
+[2024-05-01T10:27:44.224+0000] {get_and_load.py:138} INFO - *** gcs_csv_object : staging/data_to_load.csv
+[2024-05-01T10:27:44.250+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/get_and_load.py", line 140, in _load_data_to_bq
+    gcsto_bq_op = GCSToBigQueryOperator(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 234, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 437, in apply_defaults
+    result = func(self, **kwargs, default_args=default_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 793, in __init__
+    raise AirflowException(
+airflow.exceptions.AirflowException: Invalid arguments were passed to GCSToBigQueryOperator (task_id: load_data_to_bq_operator). Invalid arguments were:
+**kwargs: {'bigquery_conn_id': 'my_bqr_conn'}
+[2024-05-01T10:27:44.261+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=load_data_to_bq, task_id=load_data_to_bq, execution_date=20240501T102723, start_date=20240501T102743, end_date=20240501T102744
+[2024-05-01T10:27:44.293+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1618 for task load_data_to_bq (Invalid arguments were passed to GCSToBigQueryOperator (task_id: load_data_to_bq_operator). Invalid arguments were:
+**kwargs: {'bigquery_conn_id': 'my_bqr_conn'}; 58190)
+[2024-05-01T10:27:44.340+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-01T10:27:44.386+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

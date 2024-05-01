@@ -1,0 +1,28 @@
+[2024-05-01T09:46:32.199+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T09:46:10.878011+00:00 [queued]>
+[2024-05-01T09:46:32.225+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T09:46:10.878011+00:00 [queued]>
+[2024-05-01T09:46:32.226+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T09:46:32.264+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): load_data_to_bq> on 2024-05-01 09:46:10.878011+00:00
+[2024-05-01T09:46:32.280+0000] {standard_task_runner.py:60} INFO - Started process 55518 to run task
+[2024-05-01T09:46:32.290+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'load_data_to_bq', 'manual__2024-05-01T09:46:10.878011+00:00', '--job-id', '1571', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmpxit6ji89']
+[2024-05-01T09:46:32.297+0000] {standard_task_runner.py:88} INFO - Job 1571: Subtask load_data_to_bq
+[2024-05-01T09:46:32.443+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T09:46:10.878011+00:00 [running]> on host 283945e4dc51
+[2024-05-01T09:46:32.830+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='load_data_to_bq' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T09:46:10.878011+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T09:46:10.878011+00:00'
+[2024-05-01T09:46:32.837+0000] {get_and_load.py:137} INFO - *** gcs bucket : ds525-capstone-test-49
+[2024-05-01T09:46:32.839+0000] {get_and_load.py:138} INFO - *** gcs_csv_object : staging/data_to_load.csv
+[2024-05-01T09:46:32.842+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/get_and_load.py", line 144, in _load_data_to_bq
+    destination_project_dataset_table=f"ds_ds525-capstone.{dataset_id}.{table_id}",
+NameError: name 'dataset_id' is not defined
+[2024-05-01T09:46:32.876+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=load_data_to_bq, task_id=load_data_to_bq, execution_date=20240501T094610, start_date=20240501T094632, end_date=20240501T094632
+[2024-05-01T09:46:32.924+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1571 for task load_data_to_bq (name 'dataset_id' is not defined; 55518)
+[2024-05-01T09:46:32.984+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-01T09:46:33.030+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

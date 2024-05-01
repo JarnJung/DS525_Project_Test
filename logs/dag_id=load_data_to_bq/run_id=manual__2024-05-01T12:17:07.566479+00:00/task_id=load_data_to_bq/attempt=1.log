@@ -1,0 +1,32 @@
+[2024-05-01T12:17:34.012+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T12:17:07.566479+00:00 [queued]>
+[2024-05-01T12:17:34.039+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T12:17:07.566479+00:00 [queued]>
+[2024-05-01T12:17:34.040+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T12:17:34.081+0000] {taskinstance.py:2217} INFO - Executing <Task(GCSToBigQueryOperator): load_data_to_bq> on 2024-05-01 12:17:07.566479+00:00
+[2024-05-01T12:17:34.100+0000] {standard_task_runner.py:60} INFO - Started process 65297 to run task
+[2024-05-01T12:17:34.111+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'load_data_to_bq', 'manual__2024-05-01T12:17:07.566479+00:00', '--job-id', '1730', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmpxw0b6czs']
+[2024-05-01T12:17:34.120+0000] {standard_task_runner.py:88} INFO - Job 1730: Subtask load_data_to_bq
+[2024-05-01T12:17:34.269+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.load_data_to_bq manual__2024-05-01T12:17:07.566479+00:00 [running]> on host 283945e4dc51
+[2024-05-01T12:17:34.620+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='load_data_to_bq' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T12:17:07.566479+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T12:17:07.566479+00:00'
+[2024-05-01T12:17:34.646+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-05-01T12:17:34.658+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-05-01T12:17:34.661+0000] {gcs_to_bigquery.py:379} INFO - Using existing BigQuery table for storing data...
+[2024-05-01T12:17:34.982+0000] {bigquery.py:2328} INFO - Project is not included in destination_project_dataset_table: ds525_capstone_db.aqi_data_test; using project "ds525-capstone"
+[2024-05-01T12:17:34.984+0000] {gcs_to_bigquery.py:383} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'ds525-capstone', 'datasetId': 'ds525_capstone_db', 'tableId': 'aqi_data_test'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://ds525-capstone-test-49//opt/***/dags/data_to_load.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'schema': {'fields': [{'name': 'station_id', 'type': 'STRING'}, {'name': 'date', 'type': 'STRING'}, {'name': 'time', 'type': 'STRING'}, {'name': 'aqi_val', 'type': 'FLOAT64'}, {'name': 'aqi_color_id', 'type': 'INT64'}, {'name': 'co_val', 'type': 'FLOAT64'}, {'name': 'co_color_id', 'type': 'INT64'}, {'name': 'no2_val', 'type': 'FLOAT64'}, {'name': 'no2_color_id', 'type': 'INT64'}, {'name': 'o3_val', 'type': 'FLOAT64'}, {'name': 'o3_color_id', 'type': 'INT64'}, {'name': 'pm10_val', 'type': 'FLOAT64'}, {'name': 'pm10_color_id', 'type': 'INT64'}, {'name': 'pm25_val', 'type': 'FLOAT64'}, {'name': 'pm25_color_id', 'type': 'INT64'}, {'name': 'so2_val', 'type': 'FLOAT64'}, {'name': 'so2_color_id', 'type': 'INT64'}]}, 'skipLeadingRows': 1, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': False, 'encoding': 'UTF-8'}}
+[2024-05-01T12:17:34.992+0000] {bigquery.py:1613} INFO - Inserting job ***_load_data_to_bq_load_data_to_bq_2024_05_01T12_17_07_566479_00_00_dc6994e0f37aa2f5046b76f843d5197a
+[2024-05-01T12:17:36.171+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 444, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 971, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.NotFound: 404 Not found: URI gs://ds525-capstone-test-49//opt/airflow/dags/data_to_load.csv; reason: notFound, message: Not found: URI gs://ds525-capstone-test-49//opt/airflow/dags/data_to_load.csv
+[2024-05-01T12:17:36.209+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=load_data_to_bq, task_id=load_data_to_bq, execution_date=20240501T121707, start_date=20240501T121734, end_date=20240501T121736
+[2024-05-01T12:17:36.252+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1730 for task load_data_to_bq (404 Not found: URI gs://ds525-capstone-test-49//opt/airflow/dags/data_to_load.csv; reason: notFound, message: Not found: URI gs://ds525-capstone-test-49//opt/airflow/dags/data_to_load.csv; 65297)
+[2024-05-01T12:17:36.291+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-01T12:17:36.351+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

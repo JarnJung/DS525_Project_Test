@@ -1,0 +1,18 @@
+[2024-04-30T17:14:19.276+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_load_bqr.get_data_api manual__2024-04-30T17:14:13.567296+00:00 [queued]>
+[2024-04-30T17:14:19.303+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_load_bqr.get_data_api manual__2024-04-30T17:14:13.567296+00:00 [queued]>
+[2024-04-30T17:14:19.304+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-30T17:14:19.348+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-04-30 17:14:13.567296+00:00
+[2024-04-30T17:14:19.364+0000] {standard_task_runner.py:60} INFO - Started process 2040459 to run task
+[2024-04-30T17:14:19.374+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_load_bqr', 'get_data_api', 'manual__2024-04-30T17:14:13.567296+00:00', '--job-id', '1442', '--raw', '--subdir', 'DAGS_FOLDER/get_load_db.py', '--cfg-path', '/tmp/tmp35_q_vtl']
+[2024-04-30T17:14:19.381+0000] {standard_task_runner.py:88} INFO - Job 1442: Subtask get_data_api
+[2024-04-30T17:14:19.541+0000] {task_command.py:423} INFO - Running <TaskInstance: test_load_bqr.get_data_api manual__2024-04-30T17:14:13.567296+00:00 [running]> on host c5a6ac367c49
+[2024-04-30T17:14:19.769+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_load_bqr' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-04-30T17:14:13.567296+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-30T17:14:13.567296+00:00'
+[2024-04-30T17:14:19.923+0000] {get_load_db.py:31} INFO - **** filename : data_air_2024_05_01_0000.json
+[2024-04-30T17:14:19.975+0000] {get_load_db.py:37} INFO - JSON data saved to /opt/***/dags/data_air4thai.json
+[2024-04-30T17:14:19.976+0000] {get_load_db.py:41} INFO - local file path : /opt/***/dags/data_air4thai.json
+[2024-04-30T17:14:19.976+0000] {get_load_db.py:45} INFO - bucket name : ds525-capstone-test-49
+[2024-04-30T17:14:19.977+0000] {get_load_db.py:48} INFO - dst : stay/data_air_2024_05_01_0000.json
+[2024-04-30T17:14:19.979+0000] {python.py:202} INFO - Done. Returned value was: ('/opt/***/dags/data_air4thai.json', 'stay/data_air_2024_05_01_0000.json')
+[2024-04-30T17:14:20.043+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_load_bqr, task_id=get_data_api, execution_date=20240430T171413, start_date=20240430T171419, end_date=20240430T171420
+[2024-04-30T17:14:20.109+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-30T17:14:20.168+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

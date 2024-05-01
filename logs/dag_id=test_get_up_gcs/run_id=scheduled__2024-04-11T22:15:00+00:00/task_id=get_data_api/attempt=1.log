@@ -1,0 +1,20 @@
+[2024-04-12T01:15:02.215+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-04-11T22:15:00+00:00 [queued]>
+[2024-04-12T01:15:02.248+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-04-11T22:15:00+00:00 [queued]>
+[2024-04-12T01:15:02.249+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-12T01:15:02.300+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_data_api> on 2024-04-11 22:15:00+00:00
+[2024-04-12T01:15:02.315+0000] {standard_task_runner.py:60} INFO - Started process 669827 to run task
+[2024-04-12T01:15:02.327+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_up_gcs', 'get_data_api', 'scheduled__2024-04-11T22:15:00+00:00', '--job-id', '715', '--raw', '--subdir', 'DAGS_FOLDER/test_get_up_gcs.py', '--cfg-path', '/tmp/tmpygznj51_']
+[2024-04-12T01:15:02.337+0000] {standard_task_runner.py:88} INFO - Job 715: Subtask get_data_api
+[2024-04-12T01:15:02.534+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_up_gcs.get_data_api scheduled__2024-04-11T22:15:00+00:00 [running]> on host c5a6ac367c49
+[2024-04-12T01:15:02.830+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_up_gcs' AIRFLOW_CTX_TASK_ID='get_data_api' AIRFLOW_CTX_EXECUTION_DATE='2024-04-11T22:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-11T22:15:00+00:00'
+[2024-04-12T01:15:24.903+0000] {test_get_up_gcs.py:60} INFO - JSON data saved to /opt/***/dags/data_2024_04_12_0800.json
+[2024-04-12T01:15:24.904+0000] {test_get_up_gcs.py:64} INFO - local file path : /opt/***/dags/data_2024_04_12_0800.json
+[2024-04-12T01:15:24.905+0000] {test_get_up_gcs.py:68} INFO - bucket name : ds525-capstone-test-49
+[2024-04-12T01:15:24.905+0000] {test_get_up_gcs.py:71} INFO - dst : data/data_2024_04_12_0800.json
+[2024-04-12T01:15:24.929+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-12T01:15:24.940+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-12T01:15:25.841+0000] {gcs.py:557} INFO - File /opt/***/dags/data_2024_04_12_0800.json uploaded to data/data_2024_04_12_0800.json in ds525-capstone-test-49 bucket
+[2024-04-12T01:15:25.848+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-12T01:15:25.880+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_up_gcs, task_id=get_data_api, execution_date=20240411T221500, start_date=20240412T011502, end_date=20240412T011525
+[2024-04-12T01:15:25.968+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-12T01:15:26.009+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

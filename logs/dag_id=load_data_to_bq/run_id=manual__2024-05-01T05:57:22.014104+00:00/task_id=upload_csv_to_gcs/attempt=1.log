@@ -1,0 +1,24 @@
+[2024-05-01T05:57:37.518+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.upload_csv_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [queued]>
+[2024-05-01T05:57:37.544+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.upload_csv_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [queued]>
+[2024-05-01T05:57:37.545+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T05:57:37.586+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): upload_csv_to_gcs> on 2024-05-01 05:57:22.014104+00:00
+[2024-05-01T05:57:37.601+0000] {standard_task_runner.py:60} INFO - Started process 41479 to run task
+[2024-05-01T05:57:37.612+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'upload_csv_to_gcs', 'manual__2024-05-01T05:57:22.014104+00:00', '--job-id', '1519', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmpmitzjnvu']
+[2024-05-01T05:57:37.622+0000] {standard_task_runner.py:88} INFO - Job 1519: Subtask upload_csv_to_gcs
+[2024-05-01T05:57:37.768+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.upload_csv_to_gcs manual__2024-05-01T05:57:22.014104+00:00 [running]> on host 283945e4dc51
+[2024-05-01T05:57:38.075+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='upload_csv_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T05:57:22.014104+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T05:57:22.014104+00:00'
+[2024-05-01T05:57:38.080+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: _upload_to_gcs() missing 2 required positional arguments: 'local_file_path' and 'gcs_object'
+[2024-05-01T05:57:38.103+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=load_data_to_bq, task_id=upload_csv_to_gcs, execution_date=20240501T055722, start_date=20240501T055737, end_date=20240501T055738
+[2024-05-01T05:57:38.138+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1519 for task upload_csv_to_gcs (_upload_to_gcs() missing 2 required positional arguments: 'local_file_path' and 'gcs_object'; 41479)
+[2024-05-01T05:57:38.186+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-01T05:57:38.252+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
