@@ -1,0 +1,1 @@
+[2024-05-01T15:05:43.826+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: load_data_to_bq.extract_data scheduled__2024-05-01T02:20:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

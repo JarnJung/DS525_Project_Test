@@ -1,0 +1,13 @@
+[2024-05-01T20:20:12.188+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_to_bq.extract_data scheduled__2024-05-01T19:20:00+00:00 [queued]>
+[2024-05-01T20:20:12.215+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_to_bq.extract_data scheduled__2024-05-01T19:20:00+00:00 [queued]>
+[2024-05-01T20:20:12.216+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-01T20:20:12.256+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): extract_data> on 2024-05-01 19:20:00+00:00
+[2024-05-01T20:20:12.272+0000] {standard_task_runner.py:60} INFO - Started process 19658 to run task
+[2024-05-01T20:20:12.283+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'load_data_to_bq', 'extract_data', 'scheduled__2024-05-01T19:20:00+00:00', '--job-id', '1903', '--raw', '--subdir', 'DAGS_FOLDER/get_and_load.py', '--cfg-path', '/tmp/tmpe45dnc_f']
+[2024-05-01T20:20:12.289+0000] {standard_task_runner.py:88} INFO - Job 1903: Subtask extract_data
+[2024-05-01T20:20:12.423+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_to_bq.extract_data scheduled__2024-05-01T19:20:00+00:00 [running]> on host 5373b942cc14
+[2024-05-01T20:20:12.699+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='load_data_to_bq' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T19:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-01T19:20:00+00:00'
+[2024-05-01T20:20:12.733+0000] {python.py:202} INFO - Done. Returned value was: /opt/***/dags/data_to_load.csv
+[2024-05-01T20:20:12.802+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=load_data_to_bq, task_id=extract_data, execution_date=20240501T192000, start_date=20240501T202012, end_date=20240501T202012
+[2024-05-01T20:20:12.894+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-01T20:20:12.975+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

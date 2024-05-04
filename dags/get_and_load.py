@@ -2,6 +2,7 @@ import logging
 import re
 import os
 import datetime
+import pytz
 import csv
 
 from airflow import DAG
@@ -132,47 +133,10 @@ def _upload_csv_to_gcs(csv_output, gcs_bucket):
     return gcs_bucket, gcs_csv_object
 
 
-def _load_data_to_bq(gcs_bucket, gcs_csv_object):
-
-    logging.info('*** gcs bucket : ' + gcs_bucket)
-    logging.info('*** gcs_csv_object : ' + gcs_csv_object)
-
-    gcs_to_bq_op = GCSToBigQueryOperator(
-        task_id="load_data_to_bq",
-        source_objects=[gcs_csv_object],
-        bucket=gcs_bucket,
-        destination_project_dataset_table="ds525_capstone_db.aqi_data_test",
-        source_format="CSV",
-        skip_leading_rows=1,
-        schema_fields=[
-            {"name": "station_id", "type": "STRING"},
-            {"name": "date", "type": "STRING"},
-            {"name": "time", "type": "STRING"},
-            {"name": "aqi_val", "type": "FLOAT64"},
-            {"name": "aqi_color_id", "type": "INT64"},
-            {"name": "co_val", "type": "FLOAT64"},
-            {"name": "co_color_id", "type": "INT64"},
-            {"name": "no2_val", "type": "FLOAT64"},
-            {"name": "no2_color_id", "type": "INT64"},
-            {"name": "o3_val", "type": "FLOAT64"},
-            {"name": "o3_color_id", "type": "INT64"},
-            {"name": "pm10_val", "type": "FLOAT64"},
-            {"name": "pm10_color_id", "type": "INT64"},
-            {"name": "pm25_val", "type": "FLOAT64"},
-            {"name": "pm25_color_id", "type": "INT64"},
-            {"name": "so2_val", "type": "FLOAT64"},
-            {"name": "so2_color_id", "type": "INT64"}
-        ],
-        autodetect=True,  # Set autodetect to False since the schema is predefined        
-        write_disposition="WRITE_TRUNCATE",
-        gcp_conn_id="my_gcp_conn",
-    )
-    gcs_to_bq_op.execute(context=None)  
-
 with DAG (
     "load_data_to_bq",
-    start_date=timezone.datetime(2024, 5, 1),
-    schedule_interval=None, #cron expression
+    start_date=timezone.datetime(2024, 5, 1, 14, 0, 0, tzinfo=pytz.UTC),
+    schedule_interval="20 * * * *", #cron expression
     tags=["DS525 Capstone"],
 ) as dag:
 
@@ -201,14 +165,6 @@ with DAG (
                    "gcs_bucket": "{{ task_instance.xcom_pull(task_ids='get_data_api')[2] }}"},
     )
 
-    # load_data_to_bq = PythonOperator(
-    #     task_id="load_data_to_bq",
-    #     python_callable=_load_data_to_bq,
-    #     op_kwargs={"gcs_csv_object": "{{ task_instance.xcom_pull(task_ids='upload_csv_to_gcs')[1] }}",
-    #                "gcs_bucket": "{{ task_instance.xcom_pull(task_ids='upload_csv_to_gcs')[0] }}"},
-        
-    # )
-
     load_data_to_bq = GCSToBigQueryOperator(
         task_id="load_data_to_bq",
         source_objects=["{{task_instance.xcom_pull(task_ids='upload_csv_to_gcs')[1] }}"],
@@ -236,9 +192,9 @@ with DAG (
             {"name": "so2_color_id", "type": "INT64"}
         ],
         autodetect=True,  # Set autodetect to False since the schema is predefined        
-        write_disposition="WRITE_TRUNCATE",
+        write_disposition="WRITE_APPEND",
         gcp_conn_id="my_gcp_conn",
     )
 
-   
-    get_data_api >> upload_to_gcs >> extract_data >> upload_csv_to_gcs >> load_data_to_bq
+
+    get_data_api >> upload_to_gcs >> extract_data >> upload_csv_to_gcs >> load_data_to_bq 

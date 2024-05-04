@@ -1,0 +1,18 @@
+[2024-05-02T03:15:15.750+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_get_air4thai.upload_csv_to_gcs scheduled__2024-05-02T02:15:00+00:00 [queued]>
+[2024-05-02T03:15:15.776+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_get_air4thai.upload_csv_to_gcs scheduled__2024-05-02T02:15:00+00:00 [queued]>
+[2024-05-02T03:15:15.777+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-02T03:15:15.817+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): upload_csv_to_gcs> on 2024-05-02 02:15:00+00:00
+[2024-05-02T03:15:15.833+0000] {standard_task_runner.py:60} INFO - Started process 44978 to run task
+[2024-05-02T03:15:15.843+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_get_air4thai', 'upload_csv_to_gcs', 'scheduled__2024-05-02T02:15:00+00:00', '--job-id', '1973', '--raw', '--subdir', 'DAGS_FOLDER/test_get_air4thai.py', '--cfg-path', '/tmp/tmpktdwbrob']
+[2024-05-02T03:15:15.850+0000] {standard_task_runner.py:88} INFO - Job 1973: Subtask upload_csv_to_gcs
+[2024-05-02T03:15:15.984+0000] {task_command.py:423} INFO - Running <TaskInstance: test_get_air4thai.upload_csv_to_gcs scheduled__2024-05-02T02:15:00+00:00 [running]> on host 5373b942cc14
+[2024-05-02T03:15:16.335+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_get_air4thai' AIRFLOW_CTX_TASK_ID='upload_csv_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2024-05-02T02:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-02T02:15:00+00:00'
+[2024-05-02T03:15:16.339+0000] {test_get_air4thai.py:120} INFO - csv dst : staging_area/data_to_load.csv
+[2024-05-02T03:15:16.340+0000] {test_get_air4thai.py:122} INFO - csv out : /opt/***/dags/data_to_load.csv
+[2024-05-02T03:15:16.364+0000] {connection.py:269} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-05-02T03:15:16.376+0000] {base.py:83} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-05-02T03:15:17.313+0000] {gcs.py:557} INFO - File /opt/***/dags/data_to_load.csv uploaded to staging_area/data_to_load.csv in ds525-capstone-test-49 bucket
+[2024-05-02T03:15:17.316+0000] {python.py:202} INFO - Done. Returned value was: ('ds525-capstone-test-49', 'staging_area/data_to_load.csv')
+[2024-05-02T03:15:17.378+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=test_get_air4thai, task_id=upload_csv_to_gcs, execution_date=20240502T021500, start_date=20240502T031515, end_date=20240502T031517
+[2024-05-02T03:15:17.460+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-02T03:15:17.519+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
